@@ -2,6 +2,8 @@
 import React from "react";
 import { useForm, Controller } from "react-hook-form";
 import "./Test.scss";
+import { Link } from "react-router-dom";
+import DropdownSelect from "../../compoments/DropdownSelect";
 
 const Test = () => {
   const { handleSubmit, control, register, errors } = useForm();
@@ -11,9 +13,15 @@ const Test = () => {
     console.log("Form submitted with data:", data);
   };
 
+  const options = [
+    { label: "Option 1", value: "option1" },
+    { label: "Option 2", value: "option2" },
+    { label: "Option 3", value: "option3" },
+  ];
+
   return (
     <div className="registration-form-container">
-      <div>
+      <div className="registration-form-type">
         <h1>Create Account</h1>
         <p>Fill in the details below to create an account</p>
       </div>
@@ -25,9 +33,6 @@ const Test = () => {
             <span className="error-message">This field is required</span>
           )}
         </label>
-
-        {/* Displaying the value using watch */}
-        {/* <p>Full Name Value: {fullNameValue}</p> */}
 
         <label>
           Enter Email Address
@@ -80,10 +85,15 @@ const Test = () => {
             </span>
           )}
         </label>
+        
+        <DropdownSelect
+          name="selectField"
+          label="Select Your Role"
+          options={options}
+        />
 
         <label>
-          <input type="checkbox" {...register("agree", { required: true })} />I
-          agree to the terms and conditions
+          <input type="checkbox" {...register("agree", { required: true })} />I agree to the terms and conditions
           {errors && errors.agree && (
             <span className="error-message">This field is required</span>
           )}
@@ -91,6 +101,9 @@ const Test = () => {
 
         <button type="submit">Create Account</button>
       </form>
+      <span>
+        Already have an account? <Link to="">Sign In</Link>
+      </span>
     </div>
   );
 };

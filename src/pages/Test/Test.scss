@@ -4,9 +4,12 @@
     margin: auto;
     padding: 20px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
 
-    form-type
+    .registration-form-type {
+      text-align: center;
+      margin-bottom: 50px;
+    }
   
     form {
       display: flex;
@@ -36,3 +39,31 @@
     }
   }
   
+
+  // YourComponent.scss
+.dropdown-select {
+  margin-bottom: 20px;
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  select {
+    padding: 8px;
+    font-size: 16px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+
+    &:hover {
+      border-color: #555;
+    }
+
+    &:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+  }
+}
