@@ -3,6 +3,7 @@ import Main from "../layout/Main";
 import Test from "../pages/Test/Test";
 import Test2 from "../pages/Test2/Test2";
 import Home from "../pages/Home/Home";
+import Dashboard from "../layout/Dashboard/Dashboard";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
       {
         path: "/2",
         element: <Test />,
+      },
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
       },
     ],
   },

@@ -17,6 +17,7 @@ const Test = () => {
     { label: "Option 1", value: "option1" },
     { label: "Option 2", value: "option2" },
     { label: "Option 3", value: "option3" },
+    { label: "Option 4", value: "option4" },
   ];
 
   return (
@@ -33,7 +34,6 @@ const Test = () => {
             <span className="error-message">This field is required</span>
           )}
         </label>
-
         <label>
           Enter Email Address
           <input type="email" {...register("email", { required: true })} />
@@ -41,7 +41,6 @@ const Test = () => {
             <span className="error-message">This field is required</span>
           )}
         </label>
-
         <label>
           Your ID
           <input type="id" {...register("id", { required: true })} />
@@ -49,7 +48,6 @@ const Test = () => {
             <span className="error-message">This field is required</span>
           )}
         </label>
-
         <label>
           Your Mobile Number
           <input type="mobile" {...register("mobile", { required: true })} />
@@ -57,7 +55,6 @@ const Test = () => {
             <span className="error-message">This field is required</span>
           )}
         </label>
-
         <label>
           Password:
           <input
@@ -68,7 +65,6 @@ const Test = () => {
             <span className="error-message">This field is required</span>
           )}
         </label>
-
         <label>
           Confirm Password:
           <input
@@ -85,20 +81,17 @@ const Test = () => {
             </span>
           )}
         </label>
-        
         <DropdownSelect
           name="selectField"
           label="Select Your Role"
           options={options}
         />
-
         <label>
           <input type="checkbox" {...register("agree", { required: true })} />I agree to the terms and conditions
           {errors && errors.agree && (
             <span className="error-message">This field is required</span>
           )}
         </label>
-
         <button type="submit">Create Account</button>
       </form>
       <span>
